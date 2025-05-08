@@ -1,0 +1,17 @@
+abcir {
+TopLevel = Statement+
+
+Statement =
+  | "(" "print" Expression ")" Statement? -- print
+  | Expression Statement? -- expr
+
+Expression =
+  | "(" "let" "(" "(" variable Expression ")" ")" Statement? ")" -- let
+  | "(" "+" Expression Expression ")" -- plus
+  | variable -- vatom
+  | number -- natom
+
+variable = "a" .. "z"
+number = dig+
+dig = "0" .. "9"
+}

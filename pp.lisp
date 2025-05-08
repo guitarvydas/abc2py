@@ -1,0 +1,6 @@
+(defun pp ()
+  (setf *print-pretty* t)
+  (setf (readtable-case *readtable*) :preserve)
+  (let ((form (read *standard-input* nil nil)))  
+    (pprint form) 
+    (exit)))

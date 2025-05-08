@@ -1,0 +1,18 @@
+ABC {
+TopLevel = Statement+
+
+  Statement =
+    | "@" "pr" "(" atom ")" Statement? -- print
+    | variable "<-" Expression Statement? -- assignment
+    | Expression Statement? -- expr
+
+  Expression =
+    | Expression "+" Expression -- plus
+    | atom -- atom
+
+  atom = variable | number
+  
+    variable = "a" .. "z"
+    number = dig+
+    dig = "0" .. "9"
+}
