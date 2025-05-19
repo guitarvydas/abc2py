@@ -2,7 +2,7 @@ ABC {
 TopLevel = Statement+
 
   Statement =
-    | "@" "pr" "(" atom ")" Statement? -- print
+    | "@" "pr" "(" Expression ")" Statement? -- print
     | variable "<-" Expression Statement? -- assignment
     | Expression Statement? -- expr
 

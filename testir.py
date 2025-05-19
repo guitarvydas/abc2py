@@ -1,0 +1,12 @@
+
+def test ():
+    b = 2
+    c = 3
+    a = b + c
+    print (b)
+    print (c)
+    print (a)
+
+test()
+
+
