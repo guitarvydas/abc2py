@@ -12,7 +12,7 @@ This is a follow-on to the `abc` project. In this example, I show how to build a
 
 # Usage
 ## install
-`$ make install-js-requires`
+`$ make install`
 ## run
 `$ make`
 
@@ -77,7 +77,7 @@ This example shows two ways of generating code
 
 Strictly speaking, you only need to use one way of generating code. I show two ways, to give you more choice.
 
-I often generate code straight from the grammar,,, but, I like to find simple ways to generate code and all of my examples tend to be small. IF I were building something quite large, I would choose to use an IR with a more regular, normalized, machine-readable syntax. I favour a Lisp-y IR syntax, because it is easy to parse, it is normalized (there are only 2 kinds of things, functions and basic atoms, all code is in prefix form (no pesky infix to parse)) and because there are several choices of already-existing code indenters that can help during low-level debugging and bootstrapping (I use emacs, YMMV).
+I often generate code straight from the grammar,,, but, I like to find simple ways to generate code and all of my examples tend to be small. IF I were building something quite large, I would choose to use an IR with a more regular, normalized, machine-readable syntax. I favour a Lisp-y IR syntax, because it is easy to parse, it is normalized (there are only 2 kinds of things, functions and basic atoms, and, all code is in prefix form (no pesky infix to parse)) and because there are several choices of already-existing code indenters that can help during low-level debugging and bootstrapping (I use emacs, YMMV).
 
 I tend to think that using a Lisp-y IR achieves many of the goals of "projectional editing", but, I haven't experimented much in that direction.
 

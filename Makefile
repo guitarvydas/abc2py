@@ -17,5 +17,5 @@ abcir2py : abcir.ohm abc2py.rwr test.abcir
 test.abcir : abcir.rwr abc.ohm empty.js test.abc
 	${t2t}  abc.ohm abcir.rwr empty.js test.abc >test.abcir
 
-install-js-requires:
+install:
 	npm install yargs prompt-sync ohm-js
