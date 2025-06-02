@@ -82,52 +82,52 @@ I often generate code straight from the grammar,,, but, I like to find simple wa
 I tend to think that using a Lisp-y IR achieves many of the goals of "projectional editing", but, I haven't experimented much in that direction.
 
 ## Manually written, supplied by programmer
-`test.abc` - simple test program written in ABC (6 lines of code)
-`abc.ohm` - grammar for the example ABC language
-`abc2py.rwr` - rewrite rules from ABC to Python
-`abcir.ohm` - grammar for IR
-`abcir.rwr` - IR code generator (used for creating `test.abcir`)
-`abcir2py.rwr` - rewrite rules from IR to Python
-`empty.js` - placeholder for extra support code (no code necessary for this example, hence, empty)
+- `test.abc` - simple test program written in ABC (6 lines of code)
+- `abc.ohm` - grammar for the example ABC language
+- `abc2py.rwr` - rewrite rules from ABC to Python
+- `abcir.ohm` - grammar for IR
+- `abcir.rwr` - IR code generator (used for creating `test.abcir`)
+- `abcir2py.rwr` - rewrite rules from IR to Python
+- `empty.js` - placeholder for extra support code (no code necessary for this example, hence, empty)
 
 ## Scaffolding for this example
-`Makefile` - makefile for this example
-`README.md` - this documentation file
-`indenter.mjs` - convert brace-bracketed meta-python code to legally indented Python code
+- `Makefile` - makefile for this example
+- `README.md` - this documentation file
+- `indenter.mjs` - convert brace-bracketed meta-python code to legally indented Python code
 
 ## Tools
-`pbp/das/` - ignored (Diagrams as Syntax tool)
-`pbp/kernel/decodeoutput.mjs` - ignored (JSON output decoder needed by `abc` and `arith` projects, but not needed here)
-`pbp/kernel/kernel0d.py` - used by `t2t`tool
-`pbp/kernel/repl.py`- used by `kernel0d.py`
-`pbp/main.py` - ignored (template for main.py in DaS projects)
-`pbp/README.md` - readme for tools directory
-`pbp/refresh.bash*` - ignored (tool development helper)
-`pbp/t2t/lib/args.part.js` - utility functions for `t2t`, included in generated code
-`pbp/t2t/lib/front.part.js` - code snippet included in generated code
-`pbp/t2t/lib/middle.part.js` - code snippet included in generated code
-`pbp/t2t/lib/rwr.mjs` - RWR tool - rewriter DSL, used by `t2t.bash`
-`pbp/t2t/lib/tail.part.js` - code snippet included in generated code
-`pbp/t2t.bash*` - text to text code generator ("transpiler" tool)
-`pbp/tas/` - ignored (Text as Syntax tool)
-`pbp/tas.bash*` - ignored
+- `pbp/das/` - ignored (Diagrams as Syntax tool)
+- `pbp/kernel/decodeoutput.mjs` - ignored (JSON output decoder needed by `abc` and `arith` projects, but not needed here)
+- `pbp/kernel/kernel0d.py` - used by `t2t`tool
+- `pbp/kernel/repl.py`- used by `kernel0d.py`
+- `pbp/main.py` - ignored (template for main.py in DaS projects)
+- `pbp/README.md` - readme for tools directory
+- `pbp/refresh.bash*` - ignored (tool development helper)
+- `pbp/t2t/lib/args.part.js` - utility functions for `t2t`, included in generated code
+- `pbp/t2t/lib/front.part.js` - code snippet included in generated code
+- `pbp/t2t/lib/middle.part.js` - code snippet included in generated code
+- `pbp/t2t/lib/rwr.mjs` - RWR tool - rewriter DSL, used by `t2t.bash`
+- `pbp/t2t/lib/tail.part.js` - code snippet included in generated code
+- `pbp/t2t.bash*` - text to text code generator ("transpiler" tool)
+- `pbp/tas/` - ignored (Text as Syntax tool)
+- `pbp/tas.bash*` - ignored
 
 ## Generated Files
-`temp.rewrite.mjs` - generated Javascript program derived from `.rwr` files above, part of `t2t` toolchain
-`temp.nanodsl.mjs` - generated Javascript program that implements `t2t` code generator ("transpiler")
-`test.abcir` - generated IR (Intermediate Representation) version of `test.abc`, used for compiling `test.abc` with to Javascript via `abcirjs.rwr` and to Python via `abcirpy.rwr`.
-`test.meta-py` - generated brace-bracketed Python code straight from `abc.ohm` using `abc2py.rwr`
-`testir.meta-py` - generated brace-bracketed Python code from IR `abcir.ohm` using `abcir2py.rwr`
-`test.py` - generated, runnable Python code straight from grammar
-`testir.py` - generated, runnable Python code from IR
+- `temp.rewrite.mjs` - generated Javascript program derived from `.rwr` files above, part of `t2t` toolchain
+- `temp.nanodsl.mjs` - generated Javascript program that implements `t2t` code generator ("transpiler")
+- `test.abcir` - generated IR (Intermediate Representation) version of `test.abc`, used for compiling `test.abc` with to Javascript via `abcirjs.rwr` and to Python via `abcirpy.rwr`.
+- `test.meta-py` - generated brace-bracketed Python code straight from `abc.ohm` using `abc2py.rwr`
+- `testir.meta-py` - generated brace-bracketed Python code from IR `abcir.ohm` using `abcir2py.rwr`
+- `test.py` - generated, runnable Python code straight from grammar
+- `testir.py` - generated, runnable Python code from IR
 
 Note that the default option for `make` is to invoke `t2t` twice which will overwrite the first versions of the `temp.*.mjs` files. If you want to look at the generated code for the first versions of `temp.*.mjs` you will need to invoke `make abc2py`.
 
 
 # See Also
-See project `abc2py` for something simple that actually runs.
+See project [abc](https://github.com/guitarvydas/abc) for something even simpler.
 
-See project `arith` for a diagrammatic version of a compiler which allows a programmer to build code generators using LEGO®-like black boxes. 
+See project [arith](https://github.com/guitarvydas/arith) for a diagrammatic version of a compiler which allows a programmer to build code generators using LEGO®-like black boxes. 
 
 [aside: PBP drawware can be used to build other kinds of things, beyond just code generators, but these examples `abc`, `abc2py`, `arith` show only one use of PBP - that of building code generators].
 
